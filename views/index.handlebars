@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+            <img src="../images/burger.jpg" alt="image of burger">
+            <h1>Eat-Da-Burger!</h1>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 undevoured-burgers">
+            <ul>
+                {{#each burgers}}
+                    {{#unless devoured}}
+                        <div>{{id}}. {{name}}</div>
+                        <button class="devour-button">Devour it!</button>
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col-md-6 devoured-burgers">
+                {{#each burgers}}
+                    {{#if devoured}}
+                        <div>{{id}}. {{name}}</div>
+                    {{/if}}
+                {{/each}}
+        </div>
+    </div>
+    <div class="row">
+        <input type="text" id="burger-name">
+
+        <form class="create-form">
+        <div class="form-group">
+            <input type="text" id="burger_name">
+        </div>
+        <button type="submit">Submit</button>
+        </form>
+
+        <p>Enter a burger you want to eat and Click the "Submit" button.</p>        
+    </div>
+</div>
