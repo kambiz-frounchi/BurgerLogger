@@ -33,8 +33,10 @@ const orm = {
         });
     },
     insertOne: (table, cols, vals) => {
+        console.log(`table = ${table}, cols = ${cols} vals = ${vals}`);
         return new Promise((resolve, reject) => {
-            const queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES (${vals.toString()})`;
+            const queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES ("${vals.toString()}")`;
+            console.log(queryString);
             connection.query(queryString, (err, results) => {
                 if (err) return reject(err);
                 resolve(results);
@@ -43,7 +45,8 @@ const orm = {
     },
     updateOne: (table, objColVals, condition) => {
         return new Promise((resolve, reject) => {
-            const queryString = `UPDATE ${table} SET (${objToSql(objColVals)}) WHERE (${condition})`;
+            const queryString = `UPDATE ${table} SET ${objToSql(objColVals)} WHERE ${condition}`;
+            console.log(`queryString=${queryString}`);
             connection.query(queryString, (err, results) => {
                 if (err) return reject(err);
                 resolve(results);

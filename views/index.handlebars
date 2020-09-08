@@ -1,13 +1,14 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-
+            &nbsp;
         </div>
         <div class="col-md-4">
-            <img src="../images/burger.jpg" alt="image of burger">
+            <img src="assets/img/burger.jpg" alt="image of burger" width="200" height="400">
             <h1>Eat-Da-Burger!</h1>
         </div>
         <div class="col-md-4">
+            &nbsp;
         </div>
     </div>
     <div class="row">
@@ -15,8 +16,8 @@
             <ul>
                 {{#each burgers}}
                     {{#unless devoured}}
-                        <div>{{id}}. {{name}}</div>
-                        <button class="devour-button">Devour it!</button>
+                        <div data-id="{{id}}">{{id}}. {{burger_name}}</div>
+                        <button data-id="{{id}}" class="devour-button">Devour it!</button>
                     {{/unless}}
                 {{/each}}
             </ul>
@@ -24,14 +25,12 @@
         <div class="col-md-6 devoured-burgers">
                 {{#each burgers}}
                     {{#if devoured}}
-                        <div>{{id}}. {{name}}</div>
+                        <div>{{id}}. {{burger_name}}</div>
                     {{/if}}
                 {{/each}}
         </div>
     </div>
     <div class="row">
-        <input type="text" id="burger-name">
-
         <form class="create-form">
         <div class="form-group">
             <input type="text" id="burger_name">
