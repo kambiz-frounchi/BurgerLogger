@@ -1,0 +1,11 @@
+.div-undevoured {
+    padding: 5px;
+    margin: 5px;
+    background: #faebd7;
+}
+
+.div-devoured {
+    padding: 5px;
+    margin: 5px;
+    background: lightgreen;
+}

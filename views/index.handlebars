@@ -1,43 +1,48 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            &nbsp;
         </div>
         <div class="col-md-4">
             <img src="assets/img/burger.jpg" alt="image of burger" width="200" height="400">
             <h1>Eat-Da-Burger!</h1>
         </div>
         <div class="col-md-4">
-            &nbsp;
         </div>
     </div>
     <div class="row">
         <div class="col-md-6 undevoured-burgers">
-            <ul>
-                {{#each burgers}}
-                    {{#unless devoured}}
+            {{#each burgers}}
+                {{#unless devoured}}
+                    <div class="div-undevoured">
                         <div data-id="{{id}}">{{id}}. {{burger_name}}</div>
                         <button data-id="{{id}}" class="devour-button">Devour it!</button>
-                    {{/unless}}
-                {{/each}}
-            </ul>
+                    </div>
+                {{/unless}}
+            {{/each}}
         </div>
         <div class="col-md-6 devoured-burgers">
                 {{#each burgers}}
                     {{#if devoured}}
-                        <div>{{id}}. {{burger_name}}</div>
+                        <div class="div-devoured">
+                            <div>{{id}}. {{burger_name}}</div>
+                        </div>
                     {{/if}}
                 {{/each}}
         </div>
     </div>
-    <div class="row">
-        <form class="create-form">
-        <div class="form-group">
-            <input type="text" id="burger_name">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-4">
         </div>
-        <button type="submit">Submit</button>
-        </form>
-
-        <p>Enter a burger you want to eat and Click the "Submit" button.</p>        
+        <div class="col-md-4">        
+            <form class="create-form">
+                <div class="form-group">
+                    <input type="text" id="burger_name">
+                </div>
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+            <p>Enter a burger you want to eat and Click the "Submit" button.</p>      
+        </div>
+        <div class="col-md-4">
+        </div>  
     </div>
 </div>
