@@ -20,5 +20,5 @@ This app was tested manually.
 
 ## Future
 
-Work on the styling!
+Work on the styling and add "remove burger" functionality!
 
